@@ -1,0 +1,36 @@
+create database Employeee;
+use Employeee;
+create table emplyeePayroll(
+empID int auto_increment primary key,
+empName varchar(100)not null,
+phoneNumber varchar(199),
+adress varchar(600),
+department varchar(60),
+gen char(1)not null,
+basicPay float,
+startDate date,city varchar(69),contry varchar(50)
+);
+drop table emplyeePayroll;
+insert into emplyeePayroll(empName ,phoneNumber ,adress ,department ,gen ,basicPay ,startDate ,city ,contry)
+ values ('mayur polojwar','78578658','chamorshi','development','m',22000,'2006-07-04','chamorshi','India');
+
+ insert into emplyeePayroll(empName ,phoneNumber ,adress ,department ,gen ,basicPay ,startDate ,city ,contry)
+ values ('gudi ','965845466','nagpur','development','f',35000,'2002-09-04','nagpur','India');
+
+ insert into emplyeePayroll(empName ,phoneNumber ,adress ,department ,gen ,basicPay ,startDate ,city ,contry)
+ values ('rani kunca','969895745','namnded','testing','f',22000,'2007-04-04','mumbai','India');
+ select * from emplyeePayroll;
+
+ DELETE FROM emplyeePayroll where empID = 1 ;
+
+ UPDATE emplyeePayroll
+SET
+   empName  = 'mery Come'
+WHERE
+    empID = 3
+;
+
+SELECT basicPay FROM emplyeePayroll ;
+
+SELECT SUM(basicPay) FROM emplyeePayroll
+WHERE gen = 'f' GROUP BY gen;
